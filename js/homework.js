@@ -72,4 +72,22 @@ let testArray = [1,2, null, '', false, 4]
 result = arrayClear(testArray);
 console.log(result);
 // v2 log
-console.log( testArray.filter(arrayClear2) );
+result = testArray.filter(arrayClear2);
+console.log( result );
+
+// homework 4
+let delObjDataByKey = (data, keys) => {
+    let result = {};
+
+    Object.entries(data).map(function ([key, value]){
+         if( !keys.includes(key) ){
+             Object.assign(result,{ [key]:value} )
+         }
+    })
+
+    return result;
+}
+
+testObj = {a: 1, b: 2, c: 3 };
+result = delObjDataByKey(testObj,['c']);
+console.log(result);
