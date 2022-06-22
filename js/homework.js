@@ -1,3 +1,4 @@
+
 // homework 1
 let getYear = document.getElementById('getYear');
 let el = document.getElementById('getYearResult');
@@ -55,8 +56,20 @@ if(birthDay){
 }
 
 // homework 3
+// v1
 let arrayClear = (data) =>{
-    return data.filter( n => n )
+    return data.filter( n => n );
+}
+// v2
+let arrayClear2 = (value) => {
+    if(typeof(value) !== "undefined" && value) {
+        return value;
+    }
 }
 
 let testArray = [1,2, null, '', false, 4]
+// v1 log
+result = arrayClear(testArray);
+console.log(result);
+// v2 log
+console.log( testArray.filter(arrayClear2) );
