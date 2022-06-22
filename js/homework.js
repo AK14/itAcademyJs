@@ -50,4 +50,13 @@ let checkBirthday = (e) => {
     el.style.display = 'block';
 }
 let birthDay = document.getElementById('birthday');
-birthDay.addEventListener('submit', checkBirthday, false)
+if(birthDay){
+    birthDay.addEventListener('submit', checkBirthday, false)
+}
+
+// homework 3
+let arrayClear = (data) =>{
+    return data.filter( n => n )
+}
+
+let testArray = [1,2, null, '', false, 4]
