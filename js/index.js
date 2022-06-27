@@ -320,17 +320,6 @@ console.log();
 // }
 
 
-
-
-let deleteFromArray = (index) => {
-    console.log(this);
-}
-console.log(
-    array.map((deleteFromArray),{
-
-},array)
-);
-
 // console.log( array )
 // ----
 array = [ [1,2,4] , [3,5,7] ]
@@ -341,3 +330,24 @@ let concatArray = (array) => {
     }
 }
 concatArray(array);
+
+
+
+array = [
+    {name:'Igor', age:26},
+    {name:'Alexey', age:41},
+    {name:'Marry', age:37},
+    {name:'Boris', age:37}
+]
+
+let getObj = (index,val) => {
+    return array.filter((item) => {
+        if (item[index] === val) {
+            return true;
+        }
+    })
+}
+
+console.log( getObj('age',37));
+console.log( getObj('age',42));
+console.log( getObj('name','Alexey'));
