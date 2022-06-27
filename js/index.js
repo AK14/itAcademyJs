@@ -354,26 +354,68 @@ let getObj = (index,val) => {
 
 
 array = [
-    {name:'John', score:10},
-    {name:'Pete', score:5},
-    {name:'Mary', score:12},
-    {name:'Konstantin', score:4},
-    {name:'Ivan', score:22}
+    {name:'John',surname:'Silver', id:10},
+    {name:'Pete',surname:'Phili', id:5},
+    {name:'Mary',surname:'Jayn', id:12},
+    {name:'Konstantin',surname:'Dzu', id:4},
+    {name:'Ivan',surname:'Pechkin', id:22}
 ]
 
 let getScore = (val) => {
     return array.filter( (item) => {
-        if (item.score > val) {
+        if (item.id > val) {
             return true
         }
     })
 }
-console.log( getScore(10) );
+// console.log( getScore(10) );
 
 
 let getScore2 = array.filter(function (i){
-    if (i.score >= 4 && i.score <= 12) {
+    if (i.id >= 4 && i.id <= 12) {
         return true
     }
 })
-console.log(getScore2);
+// console.log(getScore2);
+
+let answer = array.map((item) =>{
+    if( item.id > 12 ){
+        return item
+        // return [name = item.name, score = item.score];
+    }
+
+});
+// console.log(answer);
+
+let users = array.map((item) => {
+   let result = {
+        fullNmame : `${item.name} ${item.surname}`,
+        id : item.id
+    }
+    return result
+});
+
+// console.log(users);
+
+let sortArray = [12,4,6,22,102, 3];
+let objArray = [
+    {score:22}, {score:12},{score:30},{score:5}
+];
+let sorted = sortArray.sort(( a,b)=>{
+    return a - b;
+    /*if( a < b ) {
+        return -1
+    }
+
+    if( a > b ) {
+        return  1
+    }
+
+    return  0*/
+})
+let sorted2 = objArray.sort((obj1, obj2)=>{
+    return obj1.score - obj2.score
+})
+
+// console.log(sorted);
+// console.log(sorted2);
