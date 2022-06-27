@@ -199,7 +199,7 @@ let salariesSum = 0;
 for(let key of Object.values(salaries) ){
     salariesSum += key;
 }
-console.log(salariesSum);
+
 
 let obj = (data) => {
     let result;
@@ -217,7 +217,6 @@ let obj = (data) => {
 
     let res2 = {};
     for(let item1 in data){
-        console.log('vall', Object.values(res2));
         if(Object.values(res2) < data[item1]){
             res2 = {[item1]: data[item1]};
         }
@@ -226,6 +225,119 @@ let obj = (data) => {
     return res2;
 }
 
-console.log(obj(salaries));
+// console.log(obj(salaries));
 
 // console.log(myData('Alex','45'))
+
+
+let fruits = [
+    {fruits:5},
+    {fruits:15},
+    {fruits:4},
+    {fruits:23},
+    {fruits:65},
+    {fruits:0},
+    {fruits:32},
+    {fruits:12},
+    {fruits:15},
+    {fruits:65},
+    {fruits:7},
+    {fruits:5},
+]
+
+let sumFruits1 = ( array ) => {
+    let sum = 0;
+    for (let item of array){
+        sum = sum + item.fruits;
+    }
+    return sum
+}
+
+let sumFruits2 = ( array ) => {
+    let sum = 0;
+    for (let item in array){
+        let obj = array[item];
+        sum = sum + obj.fruits;
+    }
+    return sum
+}
+
+// console.log(sumFruits1(fruits));
+// console.log(sumFruits2(fruits));
+
+let anyStrings = [
+    'Hello','my','Dear', 'Friend'
+];
+
+result = '';
+for (let str in anyStrings)
+{
+    let val = anyStrings[str]+' '
+    result += val;
+}
+
+// console.log(result);
+// обединение массива строк
+// console.log( anyStrings.join('\u00A0') );
+
+/*
+* Метод splice
+* */
+// let test = anyStrings.splice(1,2);
+// console.log(anyStrings);
+
+let test = anyStrings.splice(1,2,"first",'second');
+// console.log(anyStrings);
+
+/*
+* Метод slice
+* */
+// const array  = ['t','e','s','t']
+// const newArray = array.slice();
+// newArray.push("s");
+
+// console.log(array,newArray);
+
+
+/*
+* Метод concat
+* обединение массивов, объдинение строк
+* */
+// const array  = [1,2];
+// const newArray = [3,4];
+
+// let concatArray = array.concat(newArray)
+// console.log(concatArray);
+
+/*
+* Метод indexOf
+* обединение массивов, объдинение строк
+* */
+let array = [1, 0 , false]
+console.log();
+// if(array.indexOf('null') !== '-1'){
+//
+// }
+
+
+
+
+let deleteFromArray = (index) => {
+    console.log(this);
+}
+console.log(
+    array.map((deleteFromArray),{
+
+},array)
+);
+
+// console.log( array )
+// ----
+array = [ [1,2,4] , [3,5,7] ]
+let concatArray = (array) => {
+    let result=[];
+    for (let ar in array){
+        result = result.concat( array[ar] );
+    }
+}
+concatArray(array);
