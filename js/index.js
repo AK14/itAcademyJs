@@ -348,6 +348,32 @@ let getObj = (index,val) => {
     })
 }
 
-console.log( getObj('age',37));
-console.log( getObj('age',42));
-console.log( getObj('name','Alexey'));
+// console.log( getObj('age',37));
+// console.log( getObj('age',42));
+// console.log( getObj('name','Alexey'));
+
+
+array = [
+    {name:'John', score:10},
+    {name:'Pete', score:5},
+    {name:'Mary', score:12},
+    {name:'Konstantin', score:4},
+    {name:'Ivan', score:22}
+]
+
+let getScore = (val) => {
+    return array.filter( (item) => {
+        if (item.score > val) {
+            return true
+        }
+    })
+}
+console.log( getScore(10) );
+
+
+let getScore2 = array.filter(function (i){
+    if (i.score >= 4 && i.score <= 12) {
+        return true
+    }
+})
+console.log(getScore2);
