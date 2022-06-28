@@ -104,4 +104,15 @@ let nameToString = (data, name) => {
     return result;
 }
 testArray = ['hello', 'i', 'am', null];
-console.log( nameToString(testArray,'Alexander') );
+// console.log( nameToString(testArray,'Alexander') );
+
+// homework 6
+let descendingFilter = (data) => {
+    let result = data.sort( ( item1, item2 ) => {
+        return item2 - item1;
+    });
+    return result;
+}
+
+testArray = [5, 2, 1, -10, 8];
+console.log(descendingFilter(testArray));
