@@ -70,10 +70,10 @@ let arrayClear2 = (value) => {
 let testArray = [1,2, null, '', false, 4]
 // v1 log
 result = arrayClear(testArray);
-console.log(result);
+// console.log(result);
 // v2 log
 result = testArray.filter(arrayClear2);
-console.log( result );
+// console.log( result );
 
 // homework 4
 let delObjDataByKey = (data, keys) => {
@@ -90,4 +90,18 @@ let delObjDataByKey = (data, keys) => {
 
 testObj = {a: 1, b: 2, c: 3 };
 result = delObjDataByKey(testObj,['c']);
-console.log(result);
+// console.log(result);
+
+// homework 5
+let nameToString = (data, name) => {
+    let result = '';
+    for(item of data){
+        if(!item){
+            item = name
+        }
+        result += item + ' '
+    }
+    return result;
+}
+testArray = ['hello', 'i', 'am', null];
+console.log( nameToString(testArray,'Alexander') );
