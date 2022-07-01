@@ -419,3 +419,75 @@ let sorted2 = objArray.sort((obj1, obj2)=>{
 
 // console.log(sorted);
 // console.log(sorted2);
+
+let testArray = [
+    ['a',2],
+    ['b',2],
+    ['c',3]
+]
+
+let getArrObjects = (arr) => {
+    let key = arr[0]
+    let val = arr[1]
+
+    return  {[key]:val}
+}
+
+result = testArray.map(getArrObjects);
+// console.log(result);
+
+/** Метод reduce */
+
+testArray = [{a:1},{a:2},{a:3}]
+let foo = testArray.reduce((acc, item) => {
+    return acc + item.a;
+}, 0)
+// console.log(foo);
+
+let user = {
+    name: 'Alexander',
+    age: 36,
+    sayHi: function (){
+        // console.log('Hi my name is ' +  this.name );
+        // console.log(this.sayHi());
+    }
+}
+
+let admin = user;
+user = null;
+
+admin.sayHi();
+user = { name: 'User'};
+admin = { name: 'Admin'}
+
+function sayHi(){
+    console.log(this.name);
+}
+console.log(sayHi());
+user.f = sayHi;
+admin.f = sayHi;
+user.f();
+admin.f();
+
+function helloJack ()
+{
+    return `Hello ${this.name}`
+}
+let bob = { name: 'Bob' }
+bob.hello = helloJack;
+console.log(bob.hello());
+
+/* Функции конструкторы ( пишуться с большой буквы )*/
+function User(name){
+    this.name = name;
+    this.isAdmin = false;
+}
+
+user = new User('Juli')
+console.log(user);
+testArray = ["Oleg",'Vlad', 'Genri', 'Cat'];
+
+result = testArray.map((item) => {
+    return new User(item);
+})
+console.log(result);
