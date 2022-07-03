@@ -115,4 +115,24 @@ let descendingFilter = (data) => {
 }
 
 testArray = [5, 2, 1, -10, 8];
-console.log(descendingFilter(testArray));
+// console.log(descendingFilter(testArray));
+
+// homework 7
+let arraySum = (data) => {
+    let result = 0;
+    data.map((item) => {
+        let sum = 0;
+        if(typeof(item) === 'number'){
+            sum += item
+        }
+       else if(typeof(item) === 'object' ){
+            sum += arraySum(item)
+       }
+       result += sum
+    });
+    return result;
+}
+
+testArray = [ [1, [2] ], 4, [5] ];
+result = arraySum(testArray);
+console.log(result);
