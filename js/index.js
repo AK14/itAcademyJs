@@ -491,3 +491,18 @@ result = testArray.map((item) => {
     return new User(item);
 })
 console.log(result);
+
+
+// less 8
+function Animal(type){
+    this.type = type;
+
+    this.sayHi = () => {
+        return `I am ${this.type}`;
+    }
+}
+
+let cat = new Animal('cat');
+let dog = new Animal('dog');
+console.log(cat.sayHi());
+console.log(dog.sayHi());
