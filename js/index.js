@@ -506,3 +506,44 @@ let cat = new Animal('cat');
 let dog = new Animal('dog');
 console.log(cat.sayHi());
 console.log(dog.sayHi());
+
+// калькулятор
+// read
+// sum
+// mul
+
+function Calculator(){
+    this.int1 = 0;
+    this.int2 = 0;
+
+    this.read = function (){
+        let int1 = prompt( 'Число 1')
+        let int2 = prompt( 'Число 2')
+
+        this.int1 = Number(int1);
+        this.int2 = Number(int2);
+    }
+
+    this.sum = function (){
+        return this.int1 + this.int2
+    }
+
+    this.mul = function (){
+        return this.int1 * this.int2
+    }
+
+    this.min = function (){
+        return this.int1 - this.int2
+    }
+
+    this.dec = function (){
+        return this.int1 / this.int2
+    }
+}
+
+test = new Calculator();
+test.read(10,2);
+console.log(test.sum());
+console.log(test.mul());
+console.log(test.min());
+console.log(test.dec());
