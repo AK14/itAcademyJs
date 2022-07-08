@@ -461,9 +461,9 @@ user = { name: 'User'};
 admin = { name: 'Admin'}
 
 function sayHi(){
-    console.log(this.name);
+    // console.log(this.name);
 }
-console.log(sayHi());
+// console.log(sayHi());
 user.f = sayHi;
 admin.f = sayHi;
 user.f();
@@ -475,7 +475,7 @@ function helloJack ()
 }
 let bob = { name: 'Bob' }
 bob.hello = helloJack;
-console.log(bob.hello());
+// console.log(bob.hello());
 
 /* Функции конструкторы ( пишуться с большой буквы )*/
 function User(name){
@@ -484,13 +484,13 @@ function User(name){
 }
 
 user = new User('Juli')
-console.log(user);
+// console.log(user);
 testArray = ["Oleg",'Vlad', 'Genri', 'Cat'];
 
 result = testArray.map((item) => {
     return new User(item);
 })
-console.log(result);
+// console.log(result);
 
 
 // less 8
@@ -504,19 +504,19 @@ function Animal(type){
 
 let cat = new Animal('cat');
 let dog = new Animal('dog');
-console.log(cat.sayHi());
-console.log(dog.sayHi());
+// console.log(cat.sayHi());
+// console.log(dog.sayHi());
 
 // калькулятор
 // read
 // sum
 // mul
 
-function Calculator(){
-    this.int1 = 0;
-    this.int2 = 0;
+class Calculator {
+    int1 = 0;
+    int2 = 0;
 
-    this.read = function (){
+    read () {
         let int1 = prompt( 'Число 1')
         let int2 = prompt( 'Число 2')
 
@@ -524,26 +524,38 @@ function Calculator(){
         this.int2 = Number(int2);
     }
 
-    this.sum = function (){
+    sum (){
         return this.int1 + this.int2
     }
 
-    this.mul = function (){
+    mul (){
         return this.int1 * this.int2
     }
 
-    this.min = function (){
+    min  () {
         return this.int1 - this.int2
     }
 
-    this.dec = function (){
+    dec (){
         return this.int1 / this.int2
     }
 }
 
-test = new Calculator();
-test.read(10,2);
-console.log(test.sum());
-console.log(test.mul());
-console.log(test.min());
-console.log(test.dec());
+// test = new Calculator();
+// test.read(10,2);
+// console.log(test.sum());
+// console.log(test.mul());
+// console.log(test.min());
+// console.log(test.dec());
+
+
+class NewUser {
+    constructor(name) {
+        this.name = name;
+    }
+
+    sayHi () {
+        console.log(this.name);
+    }
+
+}
