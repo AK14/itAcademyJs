@@ -559,3 +559,45 @@ class NewUser {
     }
 
 }
+
+// HOMEWORK 9
+class Review {
+    addToList(data){
+        let ul = document.getElementById('list');
+        let arData = Object.values(data);
+
+        let li = document.createElement("li")
+        arData.forEach((item) => {
+            let p = document.createElement('p');
+            p.appendChild(document.createTextNode(item))
+            li.appendChild(p) ;
+        })
+
+        ul.appendChild(li);
+    }
+
+    static validate(data){
+        let result = true;
+        if(!data.from) result = false;
+        if(!data.text) result = false;
+        if(!data.review || data.review < 1 || data.review > 5  ) result = false;
+
+        return result
+    }
+}
+
+const review = new Review();
+const formReview = document.getElementById('reviewForm');
+formReview.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    let data = new FormData(e.target);
+    console.log(Array.from(data));
+    // получаем данные из formData
+    const formData = data.entries();
+    const result = Object.fromEntries(formData)
+
+    if(Review.validate(result)){
+        review.addToList(result);
+        formReview.reset();
+    }
+});
