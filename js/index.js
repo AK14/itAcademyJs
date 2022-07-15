@@ -560,7 +560,42 @@ class NewUser {
 
 }
 
-// HOMEWORK 9
+/*
+class Review {
+    constructor(date, title) {
+        this.date = date;
+        this.title = title;
+    }
+
+    static createReview(title){
+        return {
+            date: new Date(),
+            title:title
+        }
+    }
+}
+const  review = Review.createReview('New Review');
+
+// задачка
+class Atricles {
+    static date = new Date();
+
+    static compare( date1, date2 ){
+        console.log(date1, date2);
+    }
+}
+
+const art = Atricles.date;
+    const art2 = new Date(02);
+
+setTimeout(()=>{
+    console.log(Atricles.compare(art, art2) );
+}, 400)*/
+
+
+// const formReview = document.querySelector('#reviewForm');
+
+
 class Review {
     addToList(data){
         let ul = document.getElementById('list');
@@ -601,3 +636,67 @@ formReview.addEventListener('submit', (e)=>{
         formReview.reset();
     }
 });
+
+
+/*
+12 УРОК
+* ВСТРОЕННЫЕ ОБЪЕКТЫ И КЛАССЫ
+* */
+
+Math.max();
+Math.min(0,2,5,7,9);
+Math.round(); // округление до ближайшего целого числа;
+Math.ceil(); // округление к большему
+Math.floor(); // округление к меньшему
+Math.sqrt(); // квадратный корень
+Math.pow();
+Math.random();
+
+Number.MAX_VALUE; // юольше этого числа нельзя хранить в переменной
+Number.MIN_VALUE;
+Number.isNaN(4);
+Number(1,4566).toFixed(3);
+
+const string = 'Hello, JS world !'
+String.length // длина строки
+string.split(", ")
+string.toLowerCase();
+string.toUpperCase();
+string.replace('JS', 'Vue'); // заменяет вхождение на аргумент
+string.trim(); // обрезает проблемы в начале и конце
+
+array =  [1,2,3]
+array.every((item) =>{
+    return item === 1
+}) // return false
+array.some((item) => {
+    return item === 1
+}) // return true
+array.join();
+array.reverse();
+array.join();
+
+// Date
+new Date('').getMilliseconds();
+new Date('').getTime();
+new Date('').getDate();
+new Date('').getDay();
+new Date('').toLocaleDateString();
+
+
+const  object = { myname:"Alexander", age: 37 }
+
+//  дестурукзация
+const { myname , age } = object; // переменная называется как в об'екте
+const { myname:name1 , age:age1 } = object; // назначаем имя переменной
+const { myname:name2 , age = 22 } = object; // значение по умолчанію
+console.log(name2, age);
+
+
+const newObject = {
+    ...object, // копирует объект object
+    time: new Date(), //  дополняем новое свойство;
+    name: 'Tomara', // изменяет свойство
+}
+// так же с массивом
+const newArray = [...array, 5, 'some string']
