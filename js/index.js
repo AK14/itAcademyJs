@@ -623,19 +623,22 @@ class Review {
 
 const review = new Review();
 const formReview = document.getElementById('reviewForm');
-formReview.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    let data = new FormData(e.target);
-    console.log(Array.from(data));
-    // получаем данные из formData
-    const formData = data.entries();
-    const result = Object.fromEntries(formData)
+if(formReview){
+    formReview.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        let data = new FormData(e.target);
+        console.log(Array.from(data));
+        // получаем данные из formData
+        const formData = data.entries();
+        const result = Object.fromEntries(formData)
 
-    if(Review.validate(result)){
-        review.addToList(result);
-        formReview.reset();
-    }
-});
+        if(Review.validate(result)){
+            review.addToList(result);
+            formReview.reset();
+        }
+    });
+}
+
 
 
 /*
@@ -687,10 +690,10 @@ new Date('').toLocaleDateString();
 const  object = { myname:"Alexander", age: 37 }
 
 //  дестурукзация
-const { myname , age } = object; // переменная называется как в об'екте
-const { myname:name1 , age:age1 } = object; // назначаем имя переменной
-const { myname:name2 , age = 22 } = object; // значение по умолчанію
-console.log(name2, age);
+// const { myname , age } = object; // переменная называется как в об'екте
+// const { myname:name1 , age:age1 } = object; // назначаем имя переменной
+// const { myname:name2 , age = 22 } = object; // значение по умолчанію
+// console.log(name2, age);
 
 
 const newObject = {
@@ -699,4 +702,58 @@ const newObject = {
     name: 'Tomara', // изменяет свойство
 }
 // так же с массивом
-const newArray = [...array, 5, 'some string']
+const newArray = [...array, 5, 'some string'];
+
+const interval = setInterval(()=>{
+    let timer = document.getElementById('timer');
+    let hours = document.getElementById('hours');
+    let minutes = document.getElementById('min');
+
+   // timer
+
+   let value = Number(timer.innerText);
+   value ++;
+   timer.innerText = value;
+
+//   clock
+    hours.innerText = new Date().getHours();
+    minutes.innerText = new Date().getMinutes();
+
+}, 1000 );
+
+clearInterval(interval); // остановить интервал
+
+// сделать счетчик
+const counter = document.getElementById('counter');
+if(counter){
+    counter.addEventListener('click',(e) => {
+        let i = document.getElementById('counterResult');
+        let int = i.innerText;
+        let operation = e.target.value;
+
+        if(operation === '+') int++;
+        if(operation === '-') int--;
+
+        i.innerText = int;
+    })
+}
+
+
+// расширить класс с помощью prototype
+Array.prototype.isEmpty = function () {
+    return this.length === 0;
+}
+
+String.prototype.getVowels = function () {
+    let arr = this.toLowerCase().split('');
+    let words = ['а','у','о','и','э','ы','я','ю','е','ё']
+    let counter = 0;
+    arr.map((i) =>{
+        if(words.includes(i)){
+            counter ++
+        }
+    })
+    return counter
+
+}
+console.log('Париж'.getVowels());
