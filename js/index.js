@@ -403,7 +403,8 @@ let objArray = [
 ];
 let sorted = sortArray.sort(( a,b)=>{
     return a - b;
-    /*if( a < b ) {
+    /*
+    if( a < b ) {
         return -1
     }
 
@@ -411,9 +412,10 @@ let sorted = sortArray.sort(( a,b)=>{
         return  1
     }
 
-    return  0*/
+    return  0
+    */
 })
-let sorted2 = objArray.sort((obj1, obj2)=>{
+let sorted2 = objArray.sort((obj1, obj2) => {
     return obj1.score - obj2.score
 })
 
@@ -596,50 +598,6 @@ setTimeout(()=>{
 // const formReview = document.querySelector('#reviewForm');
 
 
-class Review {
-    addToList(data){
-        let ul = document.getElementById('list');
-        let arData = Object.values(data);
-
-        let li = document.createElement("li")
-        arData.forEach((item) => {
-            let p = document.createElement('p');
-            p.appendChild(document.createTextNode(item))
-            li.appendChild(p) ;
-        })
-
-        ul.appendChild(li);
-    }
-
-    static validate(data){
-        let result = true;
-        if(!data.from) result = false;
-        if(!data.text) result = false;
-        if(!data.review || data.review < 1 || data.review > 5  ) result = false;
-
-        return result
-    }
-}
-
-const review = new Review();
-const formReview = document.getElementById('reviewForm');
-if(formReview){
-    formReview.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        let data = new FormData(e.target);
-        console.log(Array.from(data));
-        // получаем данные из formData
-        const formData = data.entries();
-        const result = Object.fromEntries(formData)
-
-        if(Review.validate(result)){
-            review.addToList(result);
-            formReview.reset();
-        }
-    });
-}
-
-
 
 /*
 12 УРОК
@@ -652,7 +610,7 @@ Math.round(); // округление до ближайшего целого ч�
 Math.ceil(); // округление к большему
 Math.floor(); // округление к меньшему
 Math.sqrt(); // квадратный корень
-Math.pow();
+Math.pow(7,2);
 Math.random();
 
 Number.MAX_VALUE; // юольше этого числа нельзя хранить в переменной

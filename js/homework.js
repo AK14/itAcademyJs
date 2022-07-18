@@ -124,15 +124,20 @@ let arraySum = (data) => {
         let sum = 0;
         if(typeof(item) === 'number'){
             sum += item
-        }
-       else if(typeof(item) === 'object' ){
+        }else if(item.length ){ // ??
             sum += arraySum(item)
-       }
+        }
+       /*else if(typeof(item) === 'object' ){ // ??
+            sum += arraySum(item)
+       }*/
        result += sum
     });
     return result;
 }
 
 testArray = [ [1, [2] ], 4, [5] ];
+console.log(testArray);
 result = arraySum(testArray);
-console.log(result);
+
+
+
