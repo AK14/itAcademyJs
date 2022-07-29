@@ -714,4 +714,41 @@ String.prototype.getVowels = function () {
     return counter
 
 }
-console.log('Париж'.getVowels());
+// console.log('Париж'.getVowels());
+
+
+let promise = new Promise((resolve, reject)=>{
+   setTimeout(() => {
+       resolve({name:'Hello'})
+   }, 3000);
+
+    setTimeout(() => {
+        reject({message:'error'})
+    }, 4000);
+});
+
+promise.then( (data) =>{
+    console.log(data.name);
+})
+
+promise.catch( (data) =>{
+    console.log(data.message);
+})
+
+console.log("I'm being called before greet");
+
+const promiseFetch = fetch('https://randomuser.me/api/');
+promiseFetch
+    .then((response) => response.json())
+    .then((user) => {
+        let data = user.results[0]
+
+        let img = document.getElementById('image');
+        let name = document.getElementById('name');
+        let email = document.getElementById('email');
+
+        // img.setAttribute('src', data.picture.large);
+        img.src = data.picture.large
+        name.innerText = `${data.name.title} ${data.name.first} ${data.name.last}`;
+        email.innerText = data.email;
+    })
