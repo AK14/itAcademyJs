@@ -737,7 +737,7 @@ promise.catch( (data) =>{
 
 console.log("I'm being called before greet");
 
-const promiseFetch = fetch('https://randomuser.me/api/');
+/*const promiseFetch = fetch('https://randomuser.me/api/');
 promiseFetch
     .then((response) => response.json())
     .then((user) => {
@@ -751,4 +751,35 @@ promiseFetch
         img.src = data.picture.large
         name.innerText = `${data.name.title} ${data.name.first} ${data.name.last}`;
         email.innerText = data.email;
-    })
+    })*/
+
+
+// АСИНХРОННЫЕ ФУНКЦИИ
+
+async  function loadUser(){
+    const url = await fetch('https://randomuser.me/api/');
+    let response = await url.json();
+    let data = response.results[0]
+
+    let img = document.getElementById('image');
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+
+    // img.setAttribute('src', data.picture.large);
+    img.src = data.picture.large
+    name.innerText = `${data.name.title} ${data.name.first} ${data.name.last}`;
+    email.innerText = data.email;
+}
+const btnUsrChange = document.getElementById('change_user');
+btnUsrChange.addEventListener('click',()=>{
+    let result = loadUser();
+});
+
+
+// статические функции
+// Promise.all([promiseFetch1,promiseFetch2,promiseFetch3]) - ждет выполнения всех промисов
+// Promise.race([promiseFetch1,promiseFetch2,promiseFetch3])  - возвращает первый вернувшийся
+// Promise.allSettled([promiseFetch1,promiseFetch2,promiseFetch3]) - ернет результат по каждому из промисов
+Promise.allSettled([fetch('https://randomuser.me/api/'),fetch('https://randomuser.me/api/'),fetch('https://randomuser.me/api/')]).then((data)=>{
+    console.log(data);
+})
