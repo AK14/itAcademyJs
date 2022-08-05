@@ -770,16 +770,25 @@ async  function loadUser(){
     name.innerText = `${data.name.title} ${data.name.first} ${data.name.last}`;
     email.innerText = data.email;
 }
+/*
+
 const btnUsrChange = document.getElementById('change_user');
 btnUsrChange.addEventListener('click',()=>{
     let result = loadUser();
 });
+*/
 
 
 // статические функции
 // Promise.all([promiseFetch1,promiseFetch2,promiseFetch3]) - ждет выполнения всех промисов
 // Promise.race([promiseFetch1,promiseFetch2,promiseFetch3])  - возвращает первый вернувшийся
 // Promise.allSettled([promiseFetch1,promiseFetch2,promiseFetch3]) - ернет результат по каждому из промисов
-Promise.allSettled([fetch('https://randomuser.me/api/'),fetch('https://randomuser.me/api/'),fetch('https://randomuser.me/api/')]).then((data)=>{
+/*Promise.allSettled([fetch('https://randomuser.me/api/'),fetch('https://randomuser.me/api/'),fetch('https://randomuser.me/api/')]).then((data)=>{
     console.log(data);
-})
+})*/
+
+
+console.log('asdfasdf');
+// import sum1 from "./module";
+//
+console.log(sum1(2+2));
