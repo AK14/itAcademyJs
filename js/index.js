@@ -788,7 +788,32 @@ btnUsrChange.addEventListener('click',()=>{
 })*/
 
 
-console.log('asdfasdf');
+// console.log('asdfasdf');
 // import sum1 from "./module";
 //
-console.log(sum1(2+2));
+// console.log(sum1(2+2));
+
+/* СОБЫТИЯ МЫШИ */
+/*
+mouse up
+mouse down
+mouse over
+
+const clicker = document.getElementById('clicker');
+clicker.addEventListener('click', function (e){
+    console.log('alt', e.altKey);
+    console.log('shift', e.shiftKey);
+});
+
+*/
+
+/*
+* event COPY - запретить копирование
+* */
+const noCopy = document.querySelector('.text-no-copy');
+noCopy.addEventListener('copy', function (e){
+    e.preventDefault();
+    e.clipboardData.clearData();
+})
+
+const uls = document.querySelector('.q')
