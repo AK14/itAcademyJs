@@ -810,6 +810,7 @@ clicker.addEventListener('click', function (e){
 /*
 * event COPY - запретить копирование
 * */
+/*
 const noCopy = document.querySelector('.text-no-copy');
 noCopy.addEventListener('copy', function (e){
     e.preventDefault();
@@ -817,3 +818,60 @@ noCopy.addEventListener('copy', function (e){
 })
 
 const uls = document.querySelector('.q')
+*/
+
+// КАРРИРОВАНИЕ
+/*
+function carr(a){
+    return (b) => {
+        return (c) => {
+            return a + b + c
+        }
+    }
+}
+
+function carr2(func){
+    return (b) => {
+        b = b+1;
+        return (c) => {
+            c = c+1;
+            return func( b , c )
+        }
+    }
+}
+
+function  sum1 (a,b){
+    return a + b;
+}
+test = carr2(sum1);
+console.log(test(1)(1));
+*/
+
+// carr(a)(b)(c);
+
+
+
+// DRAG N DROP
+/*
+let dragImg = document.querySelector('.dragImg');
+
+if(dragImg){
+    dragImg.addEventListener('mousedown', function (e){
+
+    })
+}
+*/
+
+
+// сделать клавиатуру
+//keyUp , KeyDown
+
+
+/*let kb = document.getElementById('keyboard');
+if(kb){
+
+    document.addEventListener('keydown',  (e) => {
+        e.preventDefault();
+        console.log(e, e.target);
+    });
+}*/

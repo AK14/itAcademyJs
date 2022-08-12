@@ -23,6 +23,9 @@ app.get('/hm2', (req, res) => {
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 });
+app.get('/drag', (req, res) => {
+    res.sendFile(__dirname + '/dragndrop.html')
+});
 app.get('/todo', (req, res) => {
     // res.send('Тест');
     res.sendFile(__dirname + '/todo.html')
