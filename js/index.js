@@ -875,3 +875,55 @@ if(kb){
         console.log(e, e.target);
     });
 }*/
+
+
+
+// alert(localStorage.getItem('key'))
+// localStorage.removeItem('key');
+// localStorage.clear();
+
+// localStorage.setItem()
+
+
+// localStorage.setItem('key', 100);
+
+let lcForm = document.getElementById('localStorage');
+if(lcForm) {
+    lcForm.addEventListener('submit',function (ev){
+        ev.preventDefault();
+        let formData = new FormData(lcForm);
+        let data = Object.fromEntries(formData.entries())
+
+        localStorage.setItem('localStorageForm', JSON.stringify(data))
+
+        // localStorage.setItem('name',data.name);
+        // localStorage.setItem('email',data.email);
+        // localStorage.setItem('secretPass', data.password);
+    })
+
+    window.onload = () => {
+        let data = localStorage.getItem('localStorageForm');
+        let obj = JSON.parse(data);
+        /* ПОЛУЧЕНИЕ ДАННЫХ ИЗ JSON */
+        Object.keys(obj).forEach( (key)=>{
+           lcForm[key].value = obj[key]
+        });
+
+        // if(data){
+        //
+        //     console.log(obj);
+        // }
+
+        /*if(localStorage.getItem('localStorage')){
+            data
+            let nameItem = document.querySelector('#localStorage input[name="name"]');
+            nameItem.value = localStorage.getItem('name')
+        }*/
+    }
+}
+
+/* indexDB  Асинхронное хранение данных
+* Встроенная БД, больше чем local storage
+* */
+
+
