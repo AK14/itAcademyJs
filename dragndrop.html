@@ -3,6 +3,7 @@
         <title> index </title>
         <!-- CSS only -->
         <script src="js/index.js" defer></script>
+        <script src="js/keyboard.js" defer></script>
         <link href="/node_modtres/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href ="/css/keyboard.css" rel="stylesheet">
         <script src="/node_modtres/bootstrap/dist/js/bootstrap.min.js" ></script>
@@ -57,7 +58,7 @@
             </div>
             <!--END FUNCTION KEYS -->
 
-            <div data-keyCode="DOM_VK_TILDE" class="key num dual">
+            <div data-keyCode="Backquote" class="key num dual">
                 ~<br>`
             </div>
 
@@ -91,13 +92,13 @@
             <div data-keyCode="Digit0" class="key num dual">
                 )<br>0
             </div>
-            <div data-keyCode="" class="key num dual">
+            <div data-keyCode="Minus" class="key num dual">
                 _<br>-
             </div>
-            <div data-keyCode="" class="key num dual">
+            <div data-keyCode="Equal" class="key num dual">
                 +<br>=
             </div>
-            <div data-keyCode="DOM_VK_BACK_SPACE" class="key backspace">
+            <div data-keyCode="Backspace" class="key backspace">
                 Backspace
             </div>
             <!--END NUMBER KEYS -->
@@ -136,13 +137,13 @@
             <div data-keyCode="KeyP" class="key letter">
                 P
             </div>
-            <div data-keyCode="DOM_VK_OPEN_CURLY_BRACKET" class="key dual">
+            <div data-keyCode="BracketLeft" class="key dual">
                 {<Br>[
             </div>
-            <div data-keyCode="DOM_VK_CLOSE_CURLY_BRACKET" class="key dual">
+            <div data-keyCode="BracketRight" class="key dual">
                 }<br>]
             </div>
-            <div data-keyCode="" class="key letter dual slash">
+            <div data-keyCode="Backslash" class="key letter dual slash">
                 |<br>\
             </div>
             <div data-keyCode="CapsLock" class="key caps">
@@ -175,10 +176,10 @@
             <div data-keyCode="KeyL" class="key letter">
                 L
             </div>
-            <div data-keyCode="" class="key dual">
+            <div data-keyCode="Semicolon" class="key dual">
                 :<br>;
             </div>
-            <div data-keyCode="" class="key dual">
+            <div data-keyCode="Quote" class="key dual">
                 "<br>'
             </div>
             <div data-keyCode="Enter" class="key enter">
@@ -206,16 +207,16 @@
         </div><div data-keyCode="KeyM" class="key letter">
             M
         </div>
-            <div data-keyCode="" class="key dual">
+            <div data-keyCode="Comma" class="key dual">
                 < <br>,
             </div>
-            <div data-keyCode="" class="key dual">
+            <div data-keyCode="Period" class="key dual">
                 ><br>.
             </div>
-            <div data-keyCode="" class="key dual">
+            <div data-keyCode="Slash" class="key dual">
                 ?<br>/
             </div>
-            <div data-keyCode="LeftShift" class="key shift right">
+            <div data-keyCode="ShiftRight" class="key shift right">
                 Shift
             </div>
             <div data-keyCode="ControlLeft" class="key ctrl">
@@ -227,7 +228,7 @@
             <div data-keyCode="AltLeft" class="key">
                 Alt
             </div>
-            <div data-keyCode="" class="key space">
+            <div data-keyCode="Space" class="key space">
 
 
 
@@ -257,22 +258,22 @@
             </div>
 
             <dic class="sec-func">
-                <div data-keyCode="" class="key">
+                <div data-keyCode="Insert" class="key">
                     Insert
                 </div>
-                <div data-keyCode="" class="key">
+                <div data-keyCode="Home" class="key">
                     Home
                 </div>
-                <div data-keyCode="" class="key dual">
+                <div data-keyCode="PageUp" class="key dual">
                     Page Up
                 </div>
-                <div data-keyCode="" class="key">
+                <div data-keyCode="Delete" class="key">
                     Del
                 </div>
-                <div data-keyCode="" class="key">
+                <div data-keyCode="End" class="key">
                     End
                 </div>
-                <div data-keyCode="" class="key dual">
+                <div data-keyCode="PageDown" class="key dual">
                     Page Down
                 </div>
 
@@ -280,19 +281,19 @@
                     <div data-keyCode="" class="key hidden">
 
                     </div>
-                    <div data-keyCode="" class="key">
+                    <div data-keyCode="ArrowUp" class="key">
                         ^
                     </div>
                     <div data-keyCode="" class="key hidden">
 
                     </div>
-                    <div data-keyCode="" class="key">
+                    <div data-keyCode="ArrowLeft" class="key">
                         <
                     </div>
-                    <div data-keyCode="" class="key">
+                    <div data-keyCode="ArrowDown" class="key">
                         v
                     </div>
-                    <div data-keyCode="" class="key">
+                    <div data-keyCode="ArrowRight" class="key">
                         >
                     </div>
                 </div><!-- end arrows -->
@@ -303,3 +304,10 @@
 
     </body>
 </html>
+
+<style>
+    .active{
+        box-shadow: 0px 0px 10px #14b524;
+        z-index: 1000;
+    }
+</style>
